@@ -137,6 +137,12 @@ typedef int cJSON_bool;
 #define CJSON_NESTING_LIMIT 1000
 #endif
 
+#if defined(CONFIG_SOC_ESP32)
+int sscanf(const char *buf, const char *fmt, ...);
+double strtod(const char *string, char **endPtr);
+double fabs(double x);
+#endif
+
 /* returns the version of cJSON as a string */
 CJSON_PUBLIC(const char*) cJSON_Version(void);
 
